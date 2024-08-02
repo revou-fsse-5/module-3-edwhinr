@@ -11,7 +11,7 @@
 
 1. crate new element for content
 2. give class name for new element
-3. styling img, title, and instructions
-4. make ul for instructions and remove list style
+3. styling element in javascript
+4. add br after . (dot) in instructions
 
 ## Link : https://revou-fsse-5.github.io/module-3-edwhinr/
