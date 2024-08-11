@@ -73,7 +73,7 @@ function addRandomRecipeCnt() {
                 case 3:
                     error_1 = _a.sent();
                     console.error('Error fetching the recipe:', error_1);
-                    return [2 /*return*/, 'Error loading recipe'];
+                    return [2 /*return*/, error_1];
                 case 4: return [2 /*return*/];
             }
         });

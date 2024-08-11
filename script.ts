@@ -17,11 +17,17 @@ const recipeBtnLoad = recipeBtnById as HTMLButtonElement;
 
 recipeBtnLoad.addEventListener("click", addRandomRecipeCnt);
 
+interface Recipe {
+    strMeal: string;
+    strMealThumb: string;
+    strInstructions: string;
+  }
+
 async function addRandomRecipeCnt(): Promise<string> {
     try {
         const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
         const data = await response.json();
-        const recipe = data.meals[0];
+        const recipe: Recipe = data.meals[0];
 
         // take content from Constant Objects
         image.setAttribute('src', recipe.strMealThumb);
@@ -36,7 +42,7 @@ async function addRandomRecipeCnt(): Promise<string> {
         return 'Recipe loaded succesfully';
     } catch (error) {
         console.error('Error fetching the recipe:', error);
-        return 'Error loading recipe'
+        return error;
     }
 }
 
